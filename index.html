@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paulo Chavez · Productos con IA</title>
+<meta name="description" content="Construyo productos con IA de la idea a producción. Fundador de Recivo, el asistente de gastos e impuestos por WhatsApp.">
+<link rel="canonical" href="https://paulochavez1-gif.github.io/">
+<link rel="alternate" hreflang="es" href="https://paulochavez1-gif.github.io/">
+<link rel="alternate" hreflang="en" href="https://paulochavez1-gif.github.io/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paulo Chavez · Productos con IA">
+<meta property="og:description" content="Fundador de Recivo: fotografías un ticket en WhatsApp y la contabilidad se hace sola.">
+<meta property="og:url" content="https://paulochavez1-gif.github.io/">
+<meta property="og:image" content="https://paulochavez1-gif.github.io/assets/og-home-es.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="./assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Paulo Chavez","jobTitle":"Fundador de Recivo · Producto con IA","address":{"@type":"PostalAddress","addressLocality":"Barcelona"},"url":"https://paulochavez1-gif.github.io/","sameAs":["https://www.linkedin.com/in/paulo-c%C3%A9sar-chavez-camacho-9328a323b/","https://github.com/paulochavez1-gif"]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="nav-name" href="./"><span class="mono-mark" aria-hidden="true">PC</span>Paulo Chavez</a>
+    <div class="nav-links">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+      <a class="lang" href="./en/" hreflang="en" lang="en" aria-label="English version">EN</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="home-hero">
+      <span class="eyebrow">Producto · IA · Barcelona</span>
+      <h1>Construyo productos con IA, <em>de la idea a producción.</em></h1>
+      <p class="lede">Soy Paulo, fundador de Recivo: un asistente que convierte fotos de tickets enviadas por WhatsApp en la contabilidad y los impuestos de un negocio, en España y México. Me gusta llevar las cosas hasta el final: producto, código, legal y operación.</p>
+      <div class="hero-meta">
+        <span class="tag"><span class="dot" aria-hidden="true"></span>Recivo en producción</span>
+        <span class="tag">Máster en Marketing Digital e IA · Inesdi</span>
+        <span class="tag">México → Barcelona</span>
+      </div>
+    </section>
+
+    <section class="block" id="proyectos" style="padding-top: 24px">
+      <div class="block-head">
+        <span class="eyebrow">Proyectos</span>
+        <h2>Lo que he construido</h2>
+      </div>
+      <div class="projects">
+        <a class="project" href="./recivo/">
+          <div class="project-body">
+            <span class="eyebrow">Fundador · 2026 · En producción</span>
+            <h3>Recivo</h3>
+            <p>Mandas la foto de un ticket por WhatsApp y la contabilidad se hace sola. IA que lee facturas, tickets y notas de voz, valida cada dato y prepara el IVA de restaurantes y autónomos en España y México.</p>
+            <div class="stack"><span>WhatsApp Cloud API</span><span>Gemini</span><span>Node.js</span><span>SQLite</span></div>
+            <span class="project-cta">Ver el caso de estudio →</span>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="mini-chat">
+              <div class="bubble out">📷 Foto del ticket<span class="time">14:13 ✓✓</span></div>
+              <div class="bubble in">✅ <b>Gasto guardado</b><br>Cafè del Mercat · 25,50 €<br>IVA 10 % · 2,32 €<span class="time">14:13</span></div>
+              <div class="wa-buttons" style="max-width:100%"><span>✏️ Corregir</span><span>🗑️ Borrar</span><span>📊 Mi mes</span></div>
+            </div>
+          </div>
+        </a>
+
+        <a class="project" href="https://github.com/paulochavez1-gif/ticket-check" target="_blank" rel="noopener">
+          <div class="project-body">
+            <span class="eyebrow">Código abierto · MIT</span>
+            <h3>ticket-check</h3>
+            <p>La capa que va después de la IA: comprueba importes, NIF/CIF, RFC, fechas y moneda con reglas demostrables, y decide qué lectura creer cuando el modelo se contradice. Extraída de Recivo, sin dependencias.</p>
+            <div class="stack"><span>JavaScript</span><span>node:test</span><span>GitHub Actions</span></div>
+            <span class="project-cta">Ver en GitHub ↗</span>
+          </div>
+          <div class="project-visual code" aria-hidden="true">
+            <div class="terminal">
+              <div><span class="p">$</span> npm run example</div>
+              <div class="d">3 lecturas del mismo ticket</div>
+              <div>Fecha    <span class="ok">2026-10-03 ok</span></div>
+              <div class="d">  2024 descartado: fuera de rango</div>
+              <div>Importes <span class="ok">25,50 € coherente</span></div>
+              <div class="d">  base inventada descartada</div>
+              <div>CIF      <span class="ok">B66543216 válido</span></div>
+              <div>Moneda   <span class="w">EUR (confirmar "$")</span></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <span class="eyebrow">Cómo trabajo</span>
+        <h2>Tres ideas que repito en todo lo que hago</h2>
+      </div>
+      <div class="principles">
+        <div class="principle"><h3>Ir a donde ya está el usuario</h3><p>Recivo no tiene app porque los restaurantes ya viven en WhatsApp. Menos fricción gana a más funciones.</p></div>
+        <div class="principle"><h3>La IA lee, el código decide</h3><p>Uso modelos para lo que hacen bien y reglas deterministas para lo que no puede fallar: dinero, impuestos y fechas.</p></div>
+        <div class="principle"><h3>Terminado de verdad</h3><p>Un producto no está listo cuando funciona en mi portátil. Está listo con dominio, copias, avisos, textos legales y alguien usándolo.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="sobre-mi">
+      <div class="about">
+        <div class="block-head">
+          <span class="eyebrow">Sobre mí</span>
+          <h2>Entre el producto, el marketing y la IA</h2>
+          <div class="prose">
+            <p>Soy mexicano, licenciado en <strong>Estrategia y Transformación de Negocios por el Tecnológico de Monterrey</strong>. Trabajé en operaciones de e-commerce en <strong>Rappi</strong>, en gestión de calidad ISO y en análisis de inversiones, en México y en Estados Unidos.</p>
+            <p>Ahora vivo en Barcelona, donde curso el <strong>máster en Marketing Digital e IA Generativa de INESDI</strong>. Recivo parte de una pregunta sencilla: ¿usaría un pequeño negocio la IA si no tuviera que aprender nada nuevo?</p>
+            <p>Lo llevé de un bot en mi portátil a un producto en producción con número oficial de WhatsApp, servidor propio y textos legales para dos países. Lo construí con <strong>desarrollo asistido por IA</strong>: yo decido qué se construye, cómo se diseña y cuándo está bien hecho, y uso agentes de código para ir más rápido sin bajar el listón.</p>
+            <p>Busco equipos que quieran sacar productos con IA al mundo real, y negocios que quieran probar Recivo.</p>
+          </div>
+        </div>
+        <div class="skills">
+          <div><b>Producto</b><span>Descubrimiento con clientes, especificación, priorización, onboarding, precios</span></div>
+          <div><b>IA</b><span>Visión y extracción estructurada, function calling, validación de salidas, prompts robustos</span></div>
+          <div><b>Ingeniería</b><span>Node.js, APIs y webhooks, SQLite, WebSockets, seguridad web, pruebas automáticas</span></div>
+          <div><b>Operación</b><span>Despliegue en VPS, monitorización, copias de seguridad, RGPD y LFPDPPP</span></div>
+          <div><b>Marketing</b><span>Posicionamiento, landing pages, captación y mensajes para pymes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contacto">
+      <div class="block-head">
+        <span class="eyebrow">Contacto</span>
+        <h2>¿Hablamos?</h2>
+        <p class="prose">La forma más rápida de escribirme es LinkedIn.</p>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/paulo-c%C3%A9sar-chavez-camacho-9328a323b/" target="_blank" rel="noopener me"><span>LinkedIn</span><span>Paulo Chavez ↗</span></a>
+        <a href="https://github.com/paulochavez1-gif" target="_blank" rel="noopener me"><span>GitHub</span><span>paulochavez1-gif ↗</span></a>
+        <a href="https://userecivo.com" target="_blank" rel="noopener"><span>Recivo</span><span>userecivo.com ↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer>© 2026 Paulo Chavez · Hecho a medida, sin plantillas ni rastreadores.</footer>
+</div>
+</body>
+</html>

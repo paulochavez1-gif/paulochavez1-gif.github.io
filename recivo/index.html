@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recivo · Caso de estudio · Paulo Chavez</title>
+<meta name="description" content="Cómo construí Recivo: un asistente por WhatsApp que lee tickets con IA, valida cada dato y prepara el IVA en España y México.">
+<link rel="canonical" href="https://paulochavez1-gif.github.io/recivo/">
+<link rel="alternate" hreflang="es" href="https://paulochavez1-gif.github.io/recivo/">
+<link rel="alternate" hreflang="en" href="https://paulochavez1-gif.github.io/en/recivo/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recivo · Mandas la foto de un ticket por WhatsApp. La contabilidad se hace sola.">
+<meta property="og:description" content="Caso de estudio: arquitectura, decisiones de producto e ingeniería y el camino a producción.">
+<meta property="og:url" content="https://paulochavez1-gif.github.io/recivo/">
+<meta property="og:image" content="https://paulochavez1-gif.github.io/assets/og-recivo-es.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="nav-name" href="../"><span class="mono-mark" aria-hidden="true">PC</span>Paulo Chavez</a>
+    <div class="nav-links">
+      <a href="../#proyectos">Proyectos</a>
+      <a href="../#sobre-mi">Sobre mí</a>
+      <a class="lang" href="../en/recivo/" hreflang="en" lang="en" aria-label="English version">EN</a>
+    </div>
+  </nav>
+  <main id="main">
+  <header class="top">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">R</span>Recivo</div>
+    <div class="status"><span class="dot" aria-hidden="true"></span>En producción · app.userecivo.com</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Caso de estudio · Producto con IA · 2026</span>
+      <h1>Mandas la foto de un ticket por WhatsApp. <em>La contabilidad se hace sola.</em></h1>
+      <p class="lede">Recivo lee facturas, tickets y notas de voz que llegan por WhatsApp, valida cada dato y prepara los impuestos de restaurantes y autónomos en España y México. Sin app que instalar.</p>
+      <div class="role">
+        <div><span class="eyebrow">Rol</span><b>Fundador · producto y dirección técnica</b></div>
+        <div><span class="eyebrow">Desde</span><b>Barcelona</b></div>
+        <div><span class="eyebrow">Estado</span><b>Listo para el piloto</b></div>
+      </div>
+    </div>
+
+    <div class="phone" role="img" aria-label="Conversación de WhatsApp: el usuario envía la foto de un ticket y Recivo responde con los datos extraídos y tres botones.">
+      <div class="chat-head">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <div><b>Recivo</b><span>en línea</span></div>
+      </div>
+      <div class="bubble out">
+        <div class="receipt">
+          <div class="c"><b>CAFÈ DEL MERCAT S.L.</b><br><mark>CIF B66543216</mark><br>C/ Comerç 12 · Barcelona</div>
+          <hr>
+          <div class="row"><span>2 Menú del día</span><span>28,00</span></div>
+          <div class="row"><span>1 Agua 1L</span><span>2,50</span></div>
+          <div class="row"><span>Dto. socio</span><span>-5,00</span></div>
+          <hr>
+          <div class="row"><span>Base imp. 10%</span><mark>23,18</mark></div>
+          <div class="row"><span>IVA 10%</span><mark>2,32</mark></div>
+          <div class="row"><b>TOTAL EUR</b><b><mark>25,50</mark></b></div>
+          <hr>
+          <div class="c"><mark>03/10/2026</mark> 14:12</div>
+        </div>
+        <span class="time">14:13 ✓✓</span>
+      </div>
+      <div class="bubble in bot">
+        ✅ <b>Gasto guardado</b>
+        <dl>
+          <dt>Emisor</dt><dd>Cafè del Mercat S.L.</dd>
+          <dt>Total</dt><dd>25,50 €</dd>
+          <dt>IVA 10 %</dt><dd>2,32 €</dd>
+          <dt>Categoría</dt><dd>Restaurantes</dd>
+          <dt>Fecha</dt><dd>3 oct 2026</dd>
+        </dl>
+        <span class="time">14:13</span>
+      </div>
+      <div class="wa-buttons" aria-hidden="true"><span>✏️ Corregir</span><span>🗑️ Borrar</span><span>📊 Mi mes</span></div>
+    </div>
+  </section>
+
+  <!-- CIFRAS -->
+  <div class="facts">
+    <div class="fact"><b>2</b><span>sistemas fiscales: Modelo 303 de España y declaración mensual del SAT en México</span></div>
+    <div class="fact"><b>124</b><span>pruebas automáticas, incluido el flujo completo de WhatsApp con IA simulada</span></div>
+    <div class="fact"><b>0</b><span>apps que instalar: el cliente solo escribe al número oficial de WhatsApp</span></div>
+    <div class="fact"><b>1</b><span>número para todos los negocios, que se identifican por el teléfono de quien escribe</span></div>
+  </div>
+
+  <section class="block">
+    <div class="demo">
+      <video controls muted playsinline preload="none" poster="../assets/recivo-demo-poster.jpg" aria-label="Demostración de Recivo en 43 segundos">
+        <source src="../assets/recivo-demo.mp4" type="video/mp4">
+      </video>
+      <div class="block-head">
+        <span class="eyebrow">En 43 segundos</span>
+        <h2>De la foto del ticket al trimestre listo para el gestor</h2>
+        <p class="prose">Una foto por WhatsApp, la lectura con IA, las comprobaciones en código, el panel que se actualiza solo y la exportación final. Sin sonido, con el texto en pantalla.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROBLEMA -->
+  <section class="block">
+    <div class="split">
+      <div class="block-head">
+        <span class="eyebrow">El problema</span>
+        <h2>Los tickets se pierden en la cartera y el trimestre llega igual.</h2>
+      </div>
+      <div class="pains">
+        <div><b>Restaurantes</b><span>Facturas de proveedores en papel, cierres de caja diarios y un gestor que pide todo junto cada tres meses.</span></div>
+        <div><b>Autónomos</b><span>Gastos deducibles que nunca se apuntan porque abrir una app de contabilidad da pereza.</span></div>
+        <div><b>Estudiantes</b><span>No saben a dónde se va el dinero del mes y no van a rellenar una hoja de cálculo.</span></div>
+        <div><b>Lo común</b><span>Todos ya tienen WhatsApp abierto el día entero. Recivo se instala ahí.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECORRIDO -->
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Arquitectura</span>
+      <h2>El recorrido de un ticket, de la foto al gestor</h2>
+      <p class="prose">Cada paso es un módulo con una sola responsabilidad. El proveedor de WhatsApp vive detrás de un adaptador: pasar del prototipo (Baileys) a la API oficial de Meta fue escribir un archivo nuevo, sin tocar el resto.</p>
+    </div>
+    <div class="flow-scroll" tabindex="0" aria-label="Pasos del recorrido de un ticket">
+      <div class="flow">
+        <div class="step"><h3>WhatsApp</h3><p>Foto, PDF, nota de voz o texto. Webhook firmado con HMAC y reintentos de Meta deduplicados.</p><code>cloudApiAdapter</code></div>
+        <div class="step"><h3>Enrutado</h3><p>El teléfono del remitente decide a qué negocio va. Quien envía nunca inicia sesión.</p><code>linked_phones</code></div>
+        <div class="step key"><h3>Lectura con IA</h3><p>Gemini con visión devuelve JSON contra un esquema con las categorías propias del negocio.</p><code>responseSchema</code></div>
+        <div class="step key"><h3>Validación</h3><p>Fecha, importes, NIF, RFC y moneda se comprueban con código. Si algo no cuadra, se relee y se vota.</p><code>ticketValidation</code></div>
+        <div class="step"><h3>Panel en vivo</h3><p>SQLite separado por negocio y difusión por WebSocket solo a ese negocio.</p><code>ws · SQLite</code></div>
+        <div class="step"><h3>Gestor</h3><p>ZIP del trimestre con CSV, Excel, duplicados y comprobantes, listo para compartir.</p><code>/fiscal/export</code></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECISIONES -->
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Decisiones de producto e ingeniería</span>
+      <h2>Lo difícil no fue que la IA leyera. Fue no fiarse de ella.</h2>
+    </div>
+    <div class="decisions">
+      <article class="decision">
+        <h3>Cero errores silenciosos</h3>
+        <p>Un dato mal leído que nadie ve es peor que un error. Cada campo pasa por reglas deterministas; lo que no cuadra se relee hasta dos veces y, si sigue sin cuadrar, se avisa al usuario por WhatsApp. Un total ilegible nunca se guarda.</p>
+        <p class="evidence">El mismo ticket salió una vez como 2026 y otra como 2024. Desde entonces la fecha se copia tal como está impresa, se interpreta aparte y las dos lecturas tienen que coincidir.</p>
+      </article>
+      <article class="decision">
+        <h3>La IA conversa, el código calcula</h3>
+        <p>El asistente responde por WhatsApp con llamadas a herramientas fijas. Las cifras las calcula un módulo puro y probado, nunca el modelo. Corregir usa las mismas validaciones que el panel y borrar exige pulsar un botón.</p>
+        <p class="evidence">"¿Cuánto IVA llevo este trimestre?" → herramienta de consulta de IVA → suma exacta desde la base de datos.</p>
+      </article>
+      <article class="decision">
+        <h3>Nunca inventar un impuesto</h3>
+        <p>Una captura de una notificación bancaria volvió con un IVA del 10 % que no estaba en ninguna parte. Ahora, sin desglose impreso, el gasto se guarda con todo como base y sin IVA deducible. Es conservador, y nunca declara de menos.</p>
+        <p class="evidence">Un ticket de La Comer con IEPS parecía no cuadrar. Se añadió "otros importes" a la ecuación para no "corregir" un dato bueno.</p>
+      </article>
+      <article class="decision">
+        <h3>Diseñado para ráfagas</h3>
+        <p>Un restaurante manda diez fotos seguidas al cerrar. Hay una cola por teléfono que mantiene el orden, un límite global de llamadas a la IA con cambio de modelo si se satura, y un solo acuse de recibo por ráfaga.</p>
+        <p class="evidence">Prueba automática: 8 fotos a la vez → 8 guardadas, 1 acuse, 8 confirmaciones en orden.</p>
+      </article>
+    </div>
+
+    <div class="check" role="region" aria-label="Ejemplo de validación de un ticket">
+      <div class="check-head"><span>validación · ticket del ejemplo</span><span>reglas deterministas, sin IA</span></div>
+      <div class="check-body">
+        <table>
+          <tr><td>importes</td><td>23,18 + 2,32 + 0,00 = 25,50 (tolerancia máx(0,06 · 0,6 %))</td><td><span class="pill ok">cuadra</span></td></tr>
+          <tr><td>CIF</td><td>B66543216 · dígito de control calculado: 6</td><td><span class="pill ok">válido</span></td></tr>
+          <tr><td>fecha</td><td>impresa "03/10/2026" = leída 2026-10-03 · no futura · menos de 400 días</td><td><span class="pill ok">fiable</span></td></tr>
+          <tr><td>moneda</td><td>"EUR" → EUR · un "$" suelto nunca se adivina</td><td><span class="pill ok">ISO</span></td></tr>
+          <tr><td>si algo falla</td><td>relectura enfocada a temperatura 0, voto y aviso "Revisa esto del ticket"</td><td><span class="pill warn">avisa</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTO -->
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Producto</span>
+      <h2>Un panel que cuadra al céntimo con WhatsApp y con el Excel del gestor</h2>
+    </div>
+    <div class="split">
+      <div class="panel" role="img" aria-label="Vista del panel de Recivo: pestaña Gastos de octubre con total y gasto por categoría.">
+        <div class="panel-top">
+          <div class="tabs"><span class="on">🧾 Gastos</span><span>💰 Ventas</span><span>🏛️ Impuestos</span></div>
+          <span class="panel-month">octubre 2026</span>
+        </div>
+        <div class="panel-hero">
+          <small>Gastado este mes</small>
+          <b>3.482,40 €</b>
+          <span>IVA soportado 318,27 € · 64 tickets</span>
+        </div>
+        <div class="bars">
+          <div class="bar"><span>Proveedores</span><div class="bar-track"><i style="width: 100%"></i></div><em>1.920,15</em></div>
+          <div class="bar"><span>Supermercado</span><div class="bar-track"><i style="width: 38%"></i></div><em>731,02</em></div>
+          <div class="bar"><span>Suministros</span><div class="bar-track"><i style="width: 23%"></i></div><em>446,80</em></div>
+          <div class="bar"><span>Transporte</span><div class="bar-track"><i style="width: 12%"></i></div><em>229,13</em></div>
+          <div class="bar"><span>Otros</span><div class="bar-track"><i style="width: 8%"></i></div><em>155,30</em></div>
+        </div>
+        <span class="sample">Datos de ejemplo</span>
+      </div>
+      <div class="features">
+        <div><b>Gastos, ventas e impuestos</b><span>Tres pestañas. Las ventas se leen del cierre de caja (corte Z) y salen la ganancia, el margen y el food cost.</span></div>
+        <div><b>España y México</b><span>Trimestre y Modelo 303 con plazos ajustados a festivos, o mes y SAT con RFC. CSV con el formato decimal de cada país.</span></div>
+        <div><b>Una moneda para todo</b><span>Cambiar la moneda convierte cada cifra del panel, incluidas las que aparecen dentro de los textos de la IA.</span></div>
+        <div><b>Pensado para el móvil</b><span>Historial en tarjetas, detalle en hoja inferior y un primer uso guiado para vincular el número.</span></div>
+        <div><b>Resumen de los lunes</b><span>Un mensaje por WhatsApp con la semana del negocio, con plantillas aprobadas por Meta fuera de la ventana de 24 h.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERACIÓN -->
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Llevarlo a producción</span>
+      <h2>Un producto que se puede vender, no solo una demo</h2>
+    </div>
+    <div class="ops">
+      <div class="op"><h3>Seguridad y cuentas</h3><ul><li>Multi-negocio con aislamiento por sesión, nunca por un id que mande el cliente</li><li>Contraseñas con scrypt, límites de intentos persistentes y recuperación con tokens de un solo uso</li><li>CSP estricta, CSRF por Origin y cabeceras de seguridad</li></ul></div>
+      <div class="op"><h3>Operación</h3><ul><li>Servidor propio con HTTPS y dominio</li><li>Despliegue con candado, copia previa, comprobación de salud y vuelta atrás automática</li><li>Copias diarias y avisos por email si cae WhatsApp, la base de datos, la IA o el disco</li></ul></div>
+      <div class="op"><h3>Legal</h3><ul><li>Privacidad RGPD y aviso integral para México (LFPDPPP)</li><li>Términos aceptados y versionados en cada alta</li><li>Acuerdo de encargo de tratamiento y borrado completo de cuenta</li></ul></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Recorrido</span>
+      <h2>De un bot en un portátil a un número oficial</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl"><span class="when">Julio 2026</span><div><h3>Prototipo</h3><p>Bot conectado por QR a un WhatsApp personal. Gemini lee la foto y un panel la muestra en vivo.</p></div></div>
+      <div class="tl"><span class="when">Verano 2026</span><div><h3>De herramienta a producto</h3><p>Cuentas y multi-negocio, fiscalidad de España y México, ventas, categorías propias, metas y vista por meses.</p></div></div>
+      <div class="tl now"><span class="when">Octubre 2026</span><div><h3>Producción</h3><p>API oficial de WhatsApp con número verificado, servidor propio, landing, textos legales, asistente con botones y monitorización.</p></div></div>
+      <div class="tl next"><span class="when">Siguiente</span><div><h3>Piloto con restaurantes</h3><p>30 días con dos o tres restaurantes en España y México para medir uso real, ajustar precio y empezar a cobrar.</p></div></div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Tecnología</span>
+      <h2>Pocas piezas, bien elegidas</h2>
+      <p class="prose">Node.js sin framework de frontend y SQLite en un solo servidor: barato de operar y fácil de razonar mientras el producto busca encaje. <strong>Construido con desarrollo asistido por IA</strong>: yo definí el producto, la arquitectura, las reglas de negocio y el listón de calidad, y dirigí cada iteración.</p>
+    </div>
+    <div class="stack">
+      <span>Node.js · Express 5</span><span>WhatsApp Cloud API</span><span>Google Gemini (visión + function calling)</span><span>SQLite · better-sqlite3</span><span>WebSockets</span><span>HTML · CSS · JS sin framework</span><span>ExcelJS</span><span>Resend</span><span>Caddy · systemd</span><span>node:test</span><span>Claude Code</span>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="closing">
+    <div class="block-head">
+      <span class="eyebrow">Paulo Chavez</span>
+      <h2>Me gusta convertir un problema cotidiano en un producto que la gente usa sin pensarlo.</h2>
+    </div>
+    <div class="links">
+      <a href="https://userecivo.com" target="_blank" rel="noopener"><span>Web de Recivo</span><span>userecivo.com ↗</span></a>
+      <a href="https://www.linkedin.com/in/paulo-c%C3%A9sar-chavez-camacho-9328a323b/" target="_blank" rel="noopener"><span>LinkedIn</span><span>Paulo Chavez ↗</span></a>
+      <a href="https://github.com/paulochavez1-gif/ticket-check" target="_blank" rel="noopener"><span>Validador en GitHub</span><span>ticket-check ↗</span></a>
+    </div>
+  </section>
+  </main>
+  <footer>Las cifras del panel y el ticket son de ejemplo. Las de producto (pruebas, países, arquitectura) son reales a octubre de 2026.</footer>
+</div>
+</body>
+</html>
