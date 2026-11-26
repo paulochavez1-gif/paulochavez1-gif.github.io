@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recivo · Case study · Paulo Chavez</title>
+<meta name="description" content="How I built Recivo: a WhatsApp assistant that reads receipts with AI, validates every value and prepares VAT in Spain and Mexico.">
+<link rel="canonical" href="https://paulochavez1-gif.github.io/en/recivo/">
+<link rel="alternate" hreflang="es" href="https://paulochavez1-gif.github.io/recivo/">
+<link rel="alternate" hreflang="en" href="https://paulochavez1-gif.github.io/en/recivo/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recivo · Snap a receipt on WhatsApp. The bookkeeping does itself.">
+<meta property="og:description" content="Case study: architecture, product and engineering decisions, and the road to production.">
+<meta property="og:url" content="https://paulochavez1-gif.github.io/en/recivo/">
+<meta property="og:image" content="https://paulochavez1-gif.github.io/assets/og-recivo-en.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../../en/"><span class="mono-mark" aria-hidden="true">PC</span>Paulo Chavez</a>
+    <div class="nav-links">
+      <a href="../../en/#projects">Projects</a>
+      <a href="../../en/#about">About</a>
+      <a class="lang" href="../../recivo/" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
+    </div>
+  </nav>
+  <main id="main">
+  <header class="top">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">R</span>Recivo</div>
+    <div class="status"><span class="dot" aria-hidden="true"></span>Live · app.userecivo.com</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Case study · AI product · 2026</span>
+      <h1>Send a photo of a receipt on WhatsApp. <em>The bookkeeping does itself.</em></h1>
+      <p class="lede">Recivo reads invoices, receipts and voice notes sent over WhatsApp, validates every value and prepares the VAT filing for restaurants and freelancers in Spain and Mexico. Nothing to install.</p>
+      <div class="role">
+        <div><span class="eyebrow">Role</span><b>Founder · product and technical lead</b></div>
+        <div><span class="eyebrow">Based in</span><b>Barcelona</b></div>
+        <div><span class="eyebrow">Status</span><b>Ready for pilot</b></div>
+      </div>
+    </div>
+
+    <div class="phone" role="img" aria-label="WhatsApp conversation: the user sends a receipt photo and Recivo replies with the extracted data and three buttons.">
+      <div class="chat-head">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <div><b>Recivo</b><span>online</span></div>
+      </div>
+      <div class="bubble out">
+        <div class="receipt">
+          <div class="c"><b>CAFÈ DEL MERCAT S.L.</b><br><mark>CIF B66543216</mark><br>C/ Comerç 12 · Barcelona</div>
+          <hr>
+          <div class="row"><span>2 Menú del día</span><span>28,00</span></div>
+          <div class="row"><span>1 Agua 1L</span><span>2,50</span></div>
+          <div class="row"><span>Dto. socio</span><span>-5,00</span></div>
+          <hr>
+          <div class="row"><span>Base imp. 10%</span><mark>23,18</mark></div>
+          <div class="row"><span>IVA 10%</span><mark>2,32</mark></div>
+          <div class="row"><b>TOTAL EUR</b><b><mark>25,50</mark></b></div>
+          <hr>
+          <div class="c"><mark>03/10/2026</mark> 14:12</div>
+        </div>
+        <span class="time">14:13 ✓✓</span>
+      </div>
+      <div class="bubble in bot">
+        ✅ <b>Expense saved</b>
+        <dl>
+          <dt>Vendor</dt><dd>Cafè del Mercat S.L.</dd>
+          <dt>Total</dt><dd>€25.50</dd>
+          <dt>VAT 10%</dt><dd>€2.32</dd>
+          <dt>Category</dt><dd>Restaurants</dd>
+          <dt>Date</dt><dd>3 Oct 2026</dd>
+        </dl>
+        <span class="time">14:13</span>
+      </div>
+      <div class="wa-buttons" aria-hidden="true"><span>✏️ Edit</span><span>🗑️ Delete</span><span>📊 My month</span></div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="fact"><b>2</b><span>tax systems: Spain's quarterly Form 303 and Mexico's monthly SAT filing</span></div>
+    <div class="fact"><b>124</b><span>automated tests, including the full WhatsApp flow with a simulated AI</span></div>
+    <div class="fact"><b>0</b><span>apps to install: customers just message the official WhatsApp number</span></div>
+    <div class="fact"><b>1</b><span>number for every business, routed by the sender's phone</span></div>
+  </div>
+
+  <section class="block">
+    <div class="demo">
+      <video controls muted playsinline preload="none" poster="../../assets/recivo-demo-poster.jpg" aria-label="Recivo demo, 43 seconds">
+        <source src="../../assets/recivo-demo.mp4" type="video/mp4">
+      </video>
+      <div class="block-head">
+        <span class="eyebrow">In 43 seconds</span>
+        <h2>From a receipt photo to a quarter ready for the accountant</h2>
+        <p class="prose">A photo on WhatsApp, AI reading, checks in code, a dashboard that updates itself and the final export. The video is in Spanish, with on-screen text and no sound.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="block">
+    <div class="split">
+      <div class="block-head">
+        <span class="eyebrow">The problem</span>
+        <h2>Receipts get lost in wallets, and the quarter comes anyway.</h2>
+      </div>
+      <div class="pains">
+        <div><b>Restaurants</b><span>Paper supplier invoices, daily cash-register closes, and an accountant who wants everything at once every three months.</span></div>
+        <div><b>Freelancers</b><span>Deductible expenses that never get recorded because opening an accounting app is a chore.</span></div>
+        <div><b>Students</b><span>No idea where the month's money went, and no intention of filling in a spreadsheet.</span></div>
+        <div><b>What they share</b><span>WhatsApp is open on their phone all day. Recivo lives there.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Architecture</span>
+      <h2>A receipt's journey, from photo to accountant</h2>
+      <p class="prose">Each step is a module with a single job. The WhatsApp provider sits behind an adapter: moving from the prototype (Baileys) to Meta's official API meant writing one new file and touching nothing else.</p>
+    </div>
+    <div class="flow-scroll" tabindex="0" aria-label="Steps of a receipt's journey">
+      <div class="flow">
+        <div class="step"><h3>WhatsApp</h3><p>Photo, PDF, voice note or text. HMAC-signed webhook, with Meta's retries deduplicated.</p><code>cloudApiAdapter</code></div>
+        <div class="step"><h3>Routing</h3><p>The sender's phone decides which business it belongs to. Senders never log in.</p><code>linked_phones</code></div>
+        <div class="step key"><h3>AI reading</h3><p>Gemini vision returns JSON against a schema built from each business's own categories.</p><code>responseSchema</code></div>
+        <div class="step key"><h3>Validation</h3><p>Date, amounts, tax IDs and currency are checked in code. If something doesn't add up, it's re-read and voted on.</p><code>ticketValidation</code></div>
+        <div class="step"><h3>Live dashboard</h3><p>SQLite scoped per business, broadcast over WebSocket only to that business.</p><code>ws · SQLite</code></div>
+        <div class="step"><h3>Accountant</h3><p>A quarterly ZIP with CSV, Excel, duplicates and receipts, ready to share.</p><code>/fiscal/export</code></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Product and engineering decisions</span>
+      <h2>The hard part wasn't getting the AI to read. It was not trusting it.</h2>
+    </div>
+    <div class="decisions">
+      <article class="decision">
+        <h3>Zero silent errors</h3>
+        <p>A misread value nobody notices is worse than an error. Every field goes through deterministic rules; anything that doesn't add up is re-read up to twice and, if it still fails, the user is told on WhatsApp. An unreadable total is never saved.</p>
+        <p class="evidence">The same receipt once came back as 2026 and once as 2024. Since then the date is copied exactly as printed, parsed separately, and both readings must agree.</p>
+      </article>
+      <article class="decision">
+        <h3>The AI talks, the code calculates</h3>
+        <p>The assistant answers on WhatsApp through a fixed set of tools. Numbers come from a pure, tested module, never from the model. Edits use the same validations as the dashboard, and deleting requires pressing a button.</p>
+        <p class="evidence">"How much VAT have I paid this quarter?" → VAT lookup tool → exact sum from the database.</p>
+      </article>
+      <article class="decision">
+        <h3>Never invent a tax</h3>
+        <p>A screenshot of a bank notification came back with 10% VAT that appeared nowhere. Now, with no printed breakdown, the expense is stored as all base and no deductible VAT. Conservative, and it never under-declares.</p>
+        <p class="evidence">A Mexican supermarket receipt with IEPS excise tax looked inconsistent. "Other amounts" joined the equation so a correct value would never be "fixed".</p>
+      </article>
+      <article class="decision">
+        <h3>Built for bursts</h3>
+        <p>A restaurant sends ten photos in a row at closing time. A per-phone queue keeps the order, a global limit on AI calls switches model when one is saturated, and there's a single acknowledgement per burst.</p>
+        <p class="evidence">Automated test: 8 photos at once → 8 saved, 1 acknowledgement, 8 confirmations in order.</p>
+      </article>
+    </div>
+
+    <div class="check" role="region" aria-label="Example validation of a receipt">
+      <div class="check-head"><span>validation · example receipt</span><span>deterministic rules, no AI</span></div>
+      <div class="check-body">
+        <table>
+          <tr><td>amounts</td><td>23.18 + 2.32 + 0.00 = 25.50 (tolerance max(0.06 · 0.6%))</td><td><span class="pill ok">adds up</span></td></tr>
+          <tr><td>tax ID</td><td>B66543216 · computed control digit: 6</td><td><span class="pill ok">valid</span></td></tr>
+          <tr><td>date</td><td>printed "03/10/2026" = read 2026-10-03 · not in the future · under 400 days</td><td><span class="pill ok">reliable</span></td></tr>
+          <tr><td>currency</td><td>"EUR" → EUR · a bare "$" is never guessed</td><td><span class="pill ok">ISO</span></td></tr>
+          <tr><td>if something fails</td><td>focused re-read at temperature 0, vote, and a "please check this" message</td><td><span class="pill warn">warns</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Product</span>
+      <h2>A dashboard that matches WhatsApp and the accountant's Excel to the cent</h2>
+    </div>
+    <div class="split">
+      <div class="panel" role="img" aria-label="Recivo dashboard: October Expenses tab with total and spending by category.">
+        <div class="panel-top">
+          <div class="tabs"><span class="on">🧾 Expenses</span><span>💰 Sales</span><span>🏛️ Taxes</span></div>
+          <span class="panel-month">October 2026</span>
+        </div>
+        <div class="panel-hero">
+          <small>Spent this month</small>
+          <b>€3,482.40</b>
+          <span>Input VAT €318.27 · 64 receipts</span>
+        </div>
+        <div class="bars">
+          <div class="bar"><span>Suppliers</span><div class="bar-track"><i style="width: 100%"></i></div><em>1,920.15</em></div>
+          <div class="bar"><span>Groceries</span><div class="bar-track"><i style="width: 38%"></i></div><em>731.02</em></div>
+          <div class="bar"><span>Utilities</span><div class="bar-track"><i style="width: 23%"></i></div><em>446.80</em></div>
+          <div class="bar"><span>Transport</span><div class="bar-track"><i style="width: 12%"></i></div><em>229.13</em></div>
+          <div class="bar"><span>Other</span><div class="bar-track"><i style="width: 8%"></i></div><em>155.30</em></div>
+        </div>
+        <span class="sample">Sample data</span>
+      </div>
+      <div class="features">
+        <div><b>Expenses, sales and taxes</b><span>Three tabs. Sales are read from the end-of-day register close, giving profit, margin and food cost.</span></div>
+        <div><b>Spain and Mexico</b><span>Quarter and Form 303 with holiday-adjusted deadlines, or month and SAT with RFC. CSV in each country's decimal format.</span></div>
+        <div><b>One currency everywhere</b><span>Switching currency converts every figure on the dashboard, including those inside the AI's written insights.</span></div>
+        <div><b>Mobile first</b><span>History as cards, details in a bottom sheet, and a guided first run to link a phone number.</span></div>
+        <div><b>Monday summary</b><span>A WhatsApp message with the business's week, using Meta-approved templates outside the 24-hour window.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Getting to production</span>
+      <h2>A product you can sell, not just a demo</h2>
+    </div>
+    <div class="ops">
+      <div class="op"><h3>Security and accounts</h3><ul><li>Multi-tenant, isolated by session, never by an id sent from the client</li><li>scrypt passwords, persistent rate limits and single-use reset tokens</li><li>Strict CSP, Origin-based CSRF protection and security headers</li></ul></div>
+      <div class="op"><h3>Operations</h3><ul><li>Own server with HTTPS and domain</li><li>Locked deploys with backup, health check and automatic rollback</li><li>Daily backups and email alerts if WhatsApp, the database, the AI or the disk fail</li></ul></div>
+      <div class="op"><h3>Legal</h3><ul><li>GDPR privacy policy and full Mexican privacy notice (LFPDPPP)</li><li>Versioned terms accepted at every signup</li><li>Data processing agreement and complete account deletion</li></ul></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Timeline</span>
+      <h2>From a bot on a laptop to an official number</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl"><span class="when">July 2026</span><div><h3>Prototype</h3><p>A bot connected by QR code to a personal WhatsApp. Gemini reads the photo and a dashboard shows it live.</p></div></div>
+      <div class="tl"><span class="when">Summer 2026</span><div><h3>From tool to product</h3><p>Accounts and multi-tenancy, Spanish and Mexican taxes, sales, custom categories, goals and a monthly view.</p></div></div>
+      <div class="tl now"><span class="when">October 2026</span><div><h3>Production</h3><p>Official WhatsApp API with a verified number, own server, landing page, legal terms, assistant with buttons and monitoring.</p></div></div>
+      <div class="tl next"><span class="when">Next</span><div><h3>Restaurant pilot</h3><p>30 days with two or three restaurants in Spain and Mexico to measure real usage, tune pricing and start charging.</p></div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <span class="eyebrow">Technology</span>
+      <h2>Few pieces, well chosen</h2>
+      <p class="prose">Node.js with no frontend framework and SQLite on a single server: cheap to run and easy to reason about while the product finds its fit. <strong>Built with AI-assisted development</strong>: I defined the product, the architecture, the business rules and the quality bar, and directed every iteration.</p>
+    </div>
+    <div class="stack">
+      <span>Node.js · Express 5</span><span>WhatsApp Cloud API</span><span>Google Gemini (vision + function calling)</span><span>SQLite · better-sqlite3</span><span>WebSockets</span><span>HTML · CSS · vanilla JS</span><span>ExcelJS</span><span>Resend</span><span>Caddy · systemd</span><span>node:test</span><span>Claude Code</span>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="block-head">
+      <span class="eyebrow">Paulo Chavez</span>
+      <h2>I like turning an everyday problem into a product people use without thinking about it.</h2>
+    </div>
+    <div class="links">
+      <a href="https://userecivo.com" target="_blank" rel="noopener"><span>Recivo website</span><span>userecivo.com ↗</span></a>
+      <a href="https://www.linkedin.com/in/paulo-c%C3%A9sar-chavez-camacho-9328a323b/" target="_blank" rel="noopener"><span>LinkedIn</span><span>Paulo Chavez ↗</span></a>
+      <a href="https://github.com/paulochavez1-gif/ticket-check" target="_blank" rel="noopener"><span>Validator on GitHub</span><span>ticket-check ↗</span></a>
+    </div>
+  </section>
+  </main>
+  <footer>Dashboard figures and the receipt are sample data. Product facts (tests, countries, architecture) are real as of October 2026.</footer>
+</div>
+</body>
+</html>

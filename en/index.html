@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paulo Chavez · AI products</title>
+<meta name="description" content="I build AI products from idea to production. Founder of Recivo, the WhatsApp assistant for expenses and VAT.">
+<link rel="canonical" href="https://paulochavez1-gif.github.io/en/">
+<link rel="alternate" hreflang="es" href="https://paulochavez1-gif.github.io/">
+<link rel="alternate" hreflang="en" href="https://paulochavez1-gif.github.io/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paulo Chavez · AI products">
+<meta property="og:description" content="Founder of Recivo: snap a receipt on WhatsApp and the bookkeeping does itself.">
+<meta property="og:url" content="https://paulochavez1-gif.github.io/en/">
+<meta property="og:image" content="https://paulochavez1-gif.github.io/assets/og-home-en.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-name" href="../en/"><span class="mono-mark" aria-hidden="true">PC</span>Paulo Chavez</a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="lang" href="../" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="home-hero">
+      <span class="eyebrow">Product · AI · Barcelona</span>
+      <h1>I build AI products, <em>from idea to production.</em></h1>
+      <p class="lede">I'm Paulo, founder of Recivo: an assistant that turns receipt photos sent over WhatsApp into a small business's bookkeeping and VAT filing, in Spain and Mexico. I like taking things all the way: product, code, legal and operations.</p>
+      <div class="hero-meta">
+        <span class="tag"><span class="dot" aria-hidden="true"></span>Recivo is live</span>
+        <span class="tag">MSc Digital Marketing &amp; AI · Inesdi</span>
+        <span class="tag">Mexico → Barcelona</span>
+      </div>
+    </section>
+
+    <section class="block" id="projects" style="padding-top: 24px">
+      <div class="block-head">
+        <span class="eyebrow">Projects</span>
+        <h2>What I've built</h2>
+      </div>
+      <div class="projects">
+        <a class="project" href="../en/recivo/">
+          <div class="project-body">
+            <span class="eyebrow">Founder · 2026 · In production</span>
+            <h3>Recivo</h3>
+            <p>Send a photo of a receipt on WhatsApp and the bookkeeping does itself. AI reads invoices, receipts and voice notes, every value is validated, and VAT is prepared for restaurants and freelancers in Spain and Mexico.</p>
+            <div class="stack"><span>WhatsApp Cloud API</span><span>Gemini</span><span>Node.js</span><span>SQLite</span></div>
+            <span class="project-cta">Read the case study →</span>
+          </div>
+          <div class="project-visual" aria-hidden="true">
+            <div class="mini-chat">
+              <div class="bubble out">📷 Receipt photo<span class="time">14:13 ✓✓</span></div>
+              <div class="bubble in">✅ <b>Expense saved</b><br>Cafè del Mercat · €25.50<br>VAT 10% · €2.32<span class="time">14:13</span></div>
+              <div class="wa-buttons" style="max-width:100%"><span>✏️ Edit</span><span>🗑️ Delete</span><span>📊 My month</span></div>
+            </div>
+          </div>
+        </a>
+
+        <a class="project" href="https://github.com/paulochavez1-gif/ticket-check" target="_blank" rel="noopener">
+          <div class="project-body">
+            <span class="eyebrow">Open source · MIT</span>
+            <h3>ticket-check</h3>
+            <p>The layer that runs after the AI: it checks amounts, Spanish and Mexican tax IDs, dates and currency with provable rules, and decides which reading to trust when the model contradicts itself. Extracted from Recivo, zero dependencies.</p>
+            <div class="stack"><span>JavaScript</span><span>node:test</span><span>GitHub Actions</span></div>
+            <span class="project-cta">View on GitHub ↗</span>
+          </div>
+          <div class="project-visual code" aria-hidden="true">
+            <div class="terminal">
+              <div><span class="p">$</span> npm run example</div>
+              <div class="d">3 readings of one receipt</div>
+              <div>Date     <span class="ok">2026-10-03 ok</span></div>
+              <div class="d">  2024 rejected: out of range</div>
+              <div>Amounts  <span class="ok">€25.50 consistent</span></div>
+              <div class="d">  invented tax base rejected</div>
+              <div>Tax ID   <span class="ok">B66543216 valid</span></div>
+              <div>Currency <span class="w">EUR (confirm "$")</span></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <span class="eyebrow">How I work</span>
+        <h2>Three ideas I keep coming back to</h2>
+      </div>
+      <div class="principles">
+        <div class="principle"><h3>Go where users already are</h3><p>Recivo has no app because restaurants already live in WhatsApp. Less friction beats more features.</p></div>
+        <div class="principle"><h3>AI reads, code decides</h3><p>I use models for what they do well and deterministic rules for what cannot fail: money, taxes and dates.</p></div>
+        <div class="principle"><h3>Actually finished</h3><p>A product isn't done when it works on my laptop. It's done with a domain, backups, alerts, legal terms and someone using it.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <div class="about">
+        <div class="block-head">
+          <span class="eyebrow">About</span>
+          <h2>Between product, marketing and AI</h2>
+          <div class="prose">
+            <p>I'm Mexican, with a degree in <strong>Business Strategy and Transformation from Tecnológico de Monterrey</strong>. I've worked in e-commerce operations at <strong>Rappi</strong>, in ISO quality management and in investment analysis, in Mexico and the United States.</p>
+            <p>I now live in Barcelona, where I'm studying the <strong>MSc in Digital Marketing and Generative AI at INESDI</strong>. Recivo starts from a simple question: would a small business use AI if it didn't have to learn anything new?</p>
+            <p>I took it from a bot on my laptop to a live product with an official WhatsApp number, its own server and legal terms for two countries. I built it with <strong>AI-assisted development</strong>: I decide what gets built, how it's designed and when it's good enough, and I use coding agents to move faster without lowering the bar.</p>
+            <p>I'm looking for teams shipping AI products into the real world, and for businesses that want to try Recivo.</p>
+          </div>
+        </div>
+        <div class="skills">
+          <div><b>Product</b><span>Customer discovery, specs, prioritization, onboarding, pricing</span></div>
+          <div><b>AI</b><span>Vision and structured extraction, function calling, output validation, robust prompting</span></div>
+          <div><b>Engineering</b><span>Node.js, APIs and webhooks, SQLite, WebSockets, web security, automated tests</span></div>
+          <div><b>Operations</b><span>VPS deployment, monitoring, backups, GDPR and Mexican data protection</span></div>
+          <div><b>Marketing</b><span>Positioning, landing pages, acquisition and messaging for SMBs</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contact">
+      <div class="block-head">
+        <span class="eyebrow">Contact</span>
+        <h2>Let's talk</h2>
+        <p class="prose">LinkedIn is the fastest way to reach me.</p>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/paulo-c%C3%A9sar-chavez-camacho-9328a323b/" target="_blank" rel="noopener me"><span>LinkedIn</span><span>Paulo Chavez ↗</span></a>
+        <a href="https://github.com/paulochavez1-gif" target="_blank" rel="noopener me"><span>GitHub</span><span>paulochavez1-gif ↗</span></a>
+        <a href="https://userecivo.com" target="_blank" rel="noopener"><span>Recivo</span><span>userecivo.com ↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer>© 2026 Paulo Chavez · Custom-built, no templates, no trackers.</footer>
+</div>
+</body>
+</html>
